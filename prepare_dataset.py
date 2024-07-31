@@ -34,7 +34,7 @@ def prepare_dataset(dataset_path,
             # add dir name to mappings
             category = dirpath.split("/")[-1]
             data["mappings"].append(category) 
-            print(f"Processing {category}")
+            print(f"Processing {category}...")
 
             # loop through all the filenames and extract MFCCs
             for f in filenames:
@@ -54,8 +54,6 @@ def prepare_dataset(dataset_path,
                     data["labels"].append(i)
                     data["MFCCs"].append(MFCCs.T.tolist()) # cast numpy array to list for JSON serialization
                     data["files"].append(file_path)
-                    print(f"{file_path}: {i}")
-
             i += 1
 
     # store in json file
