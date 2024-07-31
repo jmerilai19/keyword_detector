@@ -54,6 +54,7 @@ def prepare_dataset(dataset_path,
                     data["labels"].append(i)
                     data["MFCCs"].append(MFCCs.T.tolist()) # cast numpy array to list for JSON serialization
                     data["files"].append(file_path)
+
             i += 1
 
     # store in json file
